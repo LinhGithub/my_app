@@ -1,0 +1,21 @@
+{% extends "templates/web.html" %} {% block page_content %}
+<div>
+  <h2>{{ name_unit }}</h2>
+  <div>Mã đơn vị: <strong>{{ code_unit }}</strong></div>
+  <div>Loại đơn vị: <strong>{{ type_unit }}</strong></div>
+  <div>
+    Mã đơn vị cha: {% if code_parent %}
+    <strong>{{ code_parent }}</strong>
+    {% endif %}
+  </div>
+  <div>
+    {%- if status_unit == 'true' -%}
+    <span class="badge badge-success">Hoạt động</span>
+    {%- elif status_unit == 'false' -%}
+    <span class="badge badge-warning">Khóa</span>
+    {%- endif -%}
+  </div>
+</div>
+{% endblock %}
+
+<!-- this is a sample default web page template -->
